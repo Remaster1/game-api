@@ -1,25 +1,46 @@
 
+<script setup>
+defineProps({
+    game: {
+        type: Object,
+        default:{
+            id: 1,
+            title: "Game",
+            short_description: "Yea",
+            release_date: "11.02.23",
+            platform: "Windows",
+            thumbnail : "https://img.freepik.com/free-photo/collage-with-mountains-in-city_23-2150385874.jpg?w=740&t=st=1702831724~exp=1702832324~hmac=f4a6d32738fc3a7e5fb7aa3c2ce92d4aba5101c5926fc6def5f4cd83cda55907"
+        }
+    }
+});
+</script>
+
 
 <template>
     <div>
-        <img src="https://img.freepik.com/free-photo/collage-with-mountains-in-city_23-2150385874.jpg?w=740&t=st=1702831724~exp=1702832324~hmac=f4a6d32738fc3a7e5fb7aa3c2ce92d4aba5101c5926fc6def5f4cd83cda55907"/>
-        <h1>Game</h1>
-        <p>Description</p>
+        <img :src="game.thumbnail"/>
+        <h1>{{game.title}}</h1>
+        <p>{{game.short_description}}</p>
         <nav>
            <i class="fas fa-desktop"></i>
-           <h4>Windows</h4>
+           <h4>{{ game.platform }}</h4>
         </nav>
         <nav>
            <i class="far fa-clock"></i>
-           <h4>date</h4>
+           <h4>{{ game.release_date }}</h4>
         </nav>
-        <router-link to="/">Подробнее</router-link>
+        <router-link :to="{
+            name: 'detail', 
+            params: {
+            id: game.id
+            }
+        }">Подробнее</router-link>
     </div>
 </template>
 
 <style scoped>
     div{
-        width: 520px;
+        width: 100%;
         padding: 18px;
         display: flex;
         flex-direction: column;

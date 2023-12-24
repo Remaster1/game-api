@@ -1,14 +1,12 @@
 <script setup>
-import Header from './components/Header.vue'
-import GameCard from './components/GameCard.vue'
+import Header from './components/Header.vue';
+import GameCard from './components/GameCard.vue';
 import { RouterView } from 'vue-router';
 </script>
 
 <template>
-
- 
  <div class="app">
-    <GameCard/>
+    <Header></Header>
     <RouterView></RouterView>
  </div>
 </template>
