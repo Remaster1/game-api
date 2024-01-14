@@ -13,6 +13,7 @@ defineProps({
         }
     }
 });
+
 </script>
 
 
@@ -67,6 +68,8 @@ defineProps({
         display: flex;
         margin-top: 20px;
         flex-direction: row;
+        align-items: center;
+        gap: 5px;
     }
     h4{
         font-size: 20px;
